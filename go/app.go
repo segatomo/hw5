@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"html/template"
 	"net/http"
-
 	"google.golang.org/appengine"
 	"google.golang.org/appengine/urlfetch"
 )
@@ -36,7 +35,27 @@ func handleExample(w http.ResponseWriter, r *http.Request) {
 
 	// とりあえずPataを簡単な操作で設定しますけど、すこし工夫をすれば
 	// パタトクカシーーができます。
-	content.Pata = content.A + content.B
+
+	var newPata string
+	var aRune []rune
+	var bRune []rune
+
+	aRune = []rune(content.A)
+	bRune = []rune(content.B)
+
+	if len(aRune) > len(bRune) {
+		for i := 0; i < len(bRune); i++ {
+			newPata += string(aRune[i]) + string(bRune[i])
+		}
+		newPata += string(aRune[len(bRune):])
+	} else {
+		for i := 0; i < len(aRune); i++ {
+			newPata += string(aRune[i]) + string(bRune[i])
+		}
+		newPata += string(bRune[len(aRune):])
+	}
+
+	content.Pata = newPata
 
 	// example.htmlというtemplateをcontentの内容を使って、{{.A}}などのとこ
 	// ろを実行して、内容を埋めて、wに書き込む。
