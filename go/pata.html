@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>パタトクカシーー</title>
+    <link rel="stylesheet" type="text/css" href="./static/pata.css">
+  </head>
+  <body>
+    <div class="container">
+        <h1>パタトクカシーー</h1>
+        <p>好きな単語を2つ入れてください</p>
+        <form>
+          <input type=text name=a>
+          <input type=text name=b>
+          <input type=submit>
+        </form>
+        <p>フォームの値</p>
+        A = {{.A}} <br>
+        B = {{.B}} 
+        <br><br>
+        <p>自分で計算した値</p>
+          <div>
+              <div class="balloon1">
+                  {{ .Pata}}
+              </div><br>
+              <img src="https://golang.org/doc/gopher/appenginegopher.jpg" class="small">
+          </div>
+        <br><a href="/norikae">乗り換え案内の例</a>も見てみてください。
+    </div>
+  </body>
+</html>
