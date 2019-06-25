@@ -58,55 +58,6 @@ img.small {
   height: 140;
 }
 
-.box3 {
-    padding: 0.5em 1em;
-    margin: 1em 30em;
-    color: #2c2c2f;
-    background: #8EB8FF;/*背景色*/
-}
-.box3 p {
-    margin: 0; 
-    padding: 0;
-}
-
-.box18{
-    margin:2em 0;
-    position: relative;
-    padding: 0.25em 1em;
-    border: solid 2px white;
-    border-radius: 3px 0 3px 0;
-    background: 
-}
-.box18:before,.box18:after
-{
-    content: '';
-    position: absolute;
-    width:10px;
-    height: 10px;
-    border: solid 2px white;
-    border-radius: 50%;
-}
-.box18:after {
-    top:-12px;
-    left:-12px;
-}
-.box18:before {
-    bottom:-12px;
-    right:-12px;
-}
-.box18 p {
-    margin: 0; 
-    padding: 0;
-    color: black;
-}
-
-.box18 h3 {
-    margin: 0;
-    padding: 0;
-    color: black;
-}
-
-
 button.btn-circle-3d {
   display: inline-block;
   text-decoration: none;
@@ -145,24 +96,6 @@ footer{
   position: relative;/*←絶対位置*/
   bottom: 0; /*下に固定*/
   font-family:'Lato', 'Noto Sans JP', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-}
-
-.box29 {
-    margin: 2em 0;
-    background: #8EB8FF;
-}
-.box29 .box-title {
-    font-size: 1.2em;
-    background: rgb(1865, 186, 215);
-    padding: 4px;
-    text-align: center;
-    color: #FFF;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-}
-.box29 p {
-    padding: 15px 20px;
-    margin: 0;
 }
 
 .btn-flat-logo {
