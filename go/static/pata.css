@@ -45,17 +45,60 @@ p {
 
 h2 { 
   text-align: center;
-  color: white;
+  color: black;
 }
 
 h3 {
-  color: white;
+  color: black;
+  text-align: center;
+}
+
+h4 {
+  color: black;
   text-align: center;
 }
 
 img.small { 
   width: 223;
   height: 140;
+}
+
+ol {
+  counter-reset:number; /*数字をリセット*/
+  list-style-type: none!important; /*数字を一旦消す*/
+  padding:0.5em;
+  border: dashed 1px white;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+ol li {
+  position: relative;
+  line-height: 1.5em;
+  padding: 0.5em 0.5em 0.5em 30px;
+}
+
+ol li:before{
+  /* 以下数字をつける */
+  position: absolute;
+  counter-increment: number;
+  content: counter(number);
+  /*数字のデザイン変える*/
+  display:inline-block;
+  background: #8EB8FF;
+  color: white;
+  font-family: 'Avenir','Arial Black','Arial',sans-serif;
+  font-weight:bold;
+  font-size: 15px;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  /*以下上下中央寄せのため*/
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 button.btn-circle-3d {

@@ -1,36 +1,42 @@
 <html>
   <head>
     <title>乗り換え検索</title>
+    <link rel="stylesheet" type="text/css" href="./static/pata.css">
   </head>
   <body>
-    <form>
-        <p>
-          出発：
-          <label>
-            <select name=fromsta>
-              {{range .Network}}
-                {{range .Stations}}
-                <option value="{{.}}">{{.}}</option>
-                {{end}}
-              {{end}}
-            </select>
-        </label>駅から
-        </p>
-        <p>
-          到着：
-          <label>
-            <select name=tosta>
-              {{range .Network}}
-                {{range .Stations}}
-                <option value="{{.}}">{{.}}</option>
-                {{end}}
-              {{end}}
-            </select>
-          </label>駅まで
-        </p>
-        <input type="submit" value="検索">
-    </form>
-    <p>検索結果</p>
-    {{.From}} → {{.To}}
+    <div class="container">
+        <h1>乗り換え案内</h1>
+        <form>
+            <h4>出発</h4> 
+              <label>
+                <select name=fromsta>
+                  <option value="">-- 選択してください --</option>
+                  {{range .Network}}
+                    {{range .Stations}}
+                    <option value="{{.}}">{{.}}</option>
+                    {{end}}
+                  {{end}}
+                </select>
+            </label>駅から<br>
+            <h4>到着</h4>
+              <label>
+                <select name=tosta>
+                  <option value="">-- 選択してください --</option>
+                  {{range .Network}}
+                    {{range .Stations}}
+                    <option value="{{.}}">{{.}}</option>
+                    {{end}}
+                  {{end}}
+                </select>
+              </label>駅まで<br><br>
+            <input type="submit" value="検索">
+        </form><br>
+        <h4>{{.From}}駅 から {{.To}}駅 までのルート</h4>
+        <ol>
+          {{range .Route}}
+            <li>{{.}}</li>
+          {{end}}
+        </ol>
+    </div>
   </body>
 </html>
