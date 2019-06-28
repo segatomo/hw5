@@ -140,7 +140,7 @@ func bfs(adjList map[string][]string, start string, end string) []string {
         if _, ok := adjList[now]; ok {
             for i := 0; i < len(adjList[now]); i++ {
                 next := adjList[now][i]
-                if visited[next] != true {
+                if !(visited[next]) {
                     newRoute := append(route, next)
                     queue = append(queue, newRoute)
                 }

@@ -202,3 +202,31 @@ footer{
   margin: 0;
   padding: 0;
 }
+
+.green {
+  background-color: #f0fff0;
+}
+
+.red {
+  background-color: #ffe4e1;
+}
+
+.pink { 
+  background-color: #fff0f5;
+}
+
+.purple {
+  background-color: #e6e6fa;
+}
+
+.cyan {
+  background-color: #e0ffff;
+}
+
+.orange {
+  background-color: #fdf5e6;
+}
+
+.silver {
+  background-color: #f5f5f5;
+}
