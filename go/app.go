@@ -136,12 +136,11 @@ func bfs(adjList map[string][]string, start string, end string) []string {
         if now == end {
             return route
         }
-
-        _, exist := adjList[now]
-        if exist {
+        
+        if _, ok := adjList[now]; ok {
             for i := 0; i < len(adjList[now]); i++ {
                 next := adjList[now][i]
-                if !visited[next] {
+                if visited[next] != true {
                     newRoute := append(route, next)
                     queue = append(queue, newRoute)
                 }
@@ -198,7 +197,7 @@ func makeAdj(r *http.Request) map[string][]string {
 		for idx, station := range stations {
 			
 			if _, ok := adjList[station]; ok {
-				// すでに{"渋谷": ["恵比寿", "代々木"]}が存在していた時
+				// すでに{"渋谷": ["恵比寿", "代々木"]}のように別の路線の情報が存在していた時
 				if idx > 0 {
 					adjList[station] = append(adjList[station], stations[idx-1])
 				}
